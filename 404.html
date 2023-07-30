@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/tryout-vue3-threejs-drie/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOT-TIMID</title>
+  </head>
+  <body>
+    <script>!function(base){ // IIFE which redirects deep links to index.html
+      sessionStorage.setItem(
+        '404_REFERRER',
+        '/' + // don't use a 'template literal' - the browser may predate ES6
+          location.href.split(base)
+            .slice(1)
+            .join(base)) // just in case the route also contains `base`
+      location.href = base
+    }('/0.1/')</script>
+  </body>
+</html>

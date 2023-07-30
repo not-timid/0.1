@@ -1,0 +1,61 @@
+{
+  "name": "0.1",
+  "description": "NOT-TIMID Alpha 0.1: A minimal 'Coming Soon' page, bootstrapped with `npm init vue@latest` 3.3.4.",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "build-only": "vite build",
+    "build": "run-p type-check build-only",
+    "dev": "vite",
+    "format": "prettier --write src/",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore --ignore-pattern /docs/",
+    "poststart": "mv 0.1 docs",
+    "preview": "vite preview",
+    "start:build": "npm run build && cp 404.html docs/404.html",
+    "start:clean": "rm -rf docs && rm -rf 0.1",
+    "start:serve": "mv docs 0.1 && static-server -p 5173 -n 0.1/404.html",
+    "start": "npm run start:clean && npm run start:build && npm run start:serve",
+    "test:e2e": "playwright test",
+    "test:unit": "vitest",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
+  },
+  "dependencies": {
+    "@janvorisek/drie": "^1.0.0-alpha-1.48",
+    "pinia": "^2.1.4",
+    "three": "^0.155.0",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.36.1",
+    "@rushstack/eslint-patch": "^1.3.2",
+    "@tsconfig/node18": "^18.2.0",
+    "@types/jsdom": "^21.1.1",
+    "@types/node": "^18.17.0",
+    "@types/three": "^0.154.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "@vue/test-utils": "^2.4.1",
+    "@vue/tsconfig": "^0.4.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "jsdom": "^22.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0",
+    "typescript": "~5.1.6",
+    "vite": "^4.4.6",
+    "vitest": "^0.33.0",
+    "vue-tsc": "^1.8.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/not-timid/0.1.git"
+  },
+  "author": "NOT-TIMID <info@not-timid.com> (not-timid.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/not-timid/0.1/issues"
+  },
+  "homepage": "https://not-timid.com/0.1/"
+}
